@@ -1,0 +1,658 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CD467508-4B75-4DD9-AEF0-9FCB19C35A1A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Bookstore_Application</RootNamespace>
+    <AssemblyName>Bookstore Application</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BookstoreDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookstoreDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BookstoreDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookstoreDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BookstoreDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookstoreDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BookstoreDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookstoreDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BookstoreDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookstoreDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BookstoreDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookstoreDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BookstoreDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookstoreDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BranchReview.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BranchReview.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Customer\BuyBooksUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Customer\BuyBooksUC.designer.cs">
+      <DependentUpon>BuyBooksUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\ChangePassword.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Customer\ChangePassword.designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustController.cs" />
+    <Compile Include="Customer\CustomerBookSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerBookSearch.designer.cs">
+      <DependentUpon>CustomerBookSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerForm.designer.cs">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerShowSalesHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerShowSalesHistory.designer.cs">
+      <DependentUpon>CustomerShowSalesHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\RatingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\RatingForm.designer.cs">
+      <DependentUpon>RatingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DateThing.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DateThing.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Empolyee\AddAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empolyee\AddAuthor.Designer.cs">
+      <DependentUpon>AddAuthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empolyee\AddBranch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empolyee\AddBranch.Designer.cs">
+      <DependentUpon>AddBranch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empolyee\AddBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empolyee\AddBook.Designer.cs">
+      <DependentUpon>AddBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empolyee\AddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empolyee\AddEmployee.Designer.cs">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empolyee\AddPurch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empolyee\AddPurch.Designer.cs">
+      <DependentUpon>AddPurch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empolyee\Auther.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empolyee\Auther.Designer.cs">
+      <DependentUpon>Auther.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empolyee\Books.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empolyee\Books.Designer.cs">
+      <DependentUpon>Books.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empolyee\Branches.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empolyee\Branches.Designer.cs">
+      <DependentUpon>Branches.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empolyee\EditBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empolyee\EditBook.Designer.cs">
+      <DependentUpon>EditBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empolyee\EditBranch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empolyee\EditBranch.Designer.cs">
+      <DependentUpon>EditBranch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empolyee\EditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empolyee\EditEmployee.Designer.cs">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empolyee\EditPurch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empolyee\EditPurch.Designer.cs">
+      <DependentUpon>EditPurch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empolyee\EmController.cs" />
+    <Compile Include="DBManager.cs" />
+    <Compile Include="Empolyee\Employees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empolyee\Employees.Designer.cs">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empolyee\Empolyee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empolyee\Empolyee.Designer.cs">
+      <DependentUpon>Empolyee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empolyee\MainMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empolyee\MainMenuForm.Designer.cs">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empolyee\PurchaseFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empolyee\PurchaseFrm.Designer.cs">
+      <DependentUpon>PurchaseFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empolyee\PurchHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empolyee\PurchHistoryForm.Designer.cs">
+      <DependentUpon>PurchHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CheckTopRatedBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\CheckTopRatedBooks.Designer.cs">
+      <DependentUpon>CheckTopRatedBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empolyee\SearchBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empolyee\SearchBooks.Designer.cs">
+      <DependentUpon>SearchBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empolyee\ViewAllAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empolyee\ViewAllAuthor.Designer.cs">
+      <DependentUpon>ViewAllAuthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empolyee\ViewAllBranches.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empolyee\ViewAllBranches.Designer.cs">
+      <DependentUpon>ViewAllBranches.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empolyee\ViewAllEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empolyee\ViewAllEmp.Designer.cs">
+      <DependentUpon>ViewAllEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empolyee\Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empolyee\Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empolyee\ViewRequests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empolyee\ViewRequests.Designer.cs">
+      <DependentUpon>ViewRequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustStoredProc.cs" />
+    <Compile Include="LoginAndSignUp\LoginandSignupConroller.cs" />
+    <Compile Include="LoginAndSignUp\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginAndSignUp\LoginForm.designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginAndSignUp\SignUpCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginAndSignUp\SignUpCustomer.designer.cs">
+      <DependentUpon>SignUpCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginAndSignUp\SignupPublisher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginAndSignUp\SignupPublisher.designer.cs">
+      <DependentUpon>SignupPublisher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publisher\MainmenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Publisher\MainmenuForm.designer.cs">
+      <DependentUpon>MainmenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Publisher\PubController.cs" />
+    <Compile Include="Publisher\PublisherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Publisher\PublisherForm.designer.cs">
+      <DependentUpon>PublisherForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Publisher\PublisherFormRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Publisher\PublisherFormRequest.designer.cs">
+      <DependentUpon>PublisherFormRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Publisher\PublisherformShowRequests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Publisher\PublisherformShowRequests.designer.cs">
+      <DependentUpon>PublisherformShowRequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Publisher\Settingsform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Publisher\Settingsform.designer.cs">
+      <DependentUpon>Settingsform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TotalReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\TotalReports.Designer.cs">
+      <DependentUpon>TotalReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TotalSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\TotalSales.Designer.cs">
+      <DependentUpon>TotalSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoredProcedures.cs" />
+    <Compile Include="TopRatedBooks.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TopRatedBooks.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utils.cs" />
+    <EmbeddedResource Include="BranchReview.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BranchReview.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\BuyBooksUC.resx">
+      <DependentUpon>BuyBooksUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerBookSearch.resx">
+      <DependentUpon>CustomerBookSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerForm.resx">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerShowSalesHistory.resx">
+      <DependentUpon>CustomerShowSalesHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\RatingForm.resx">
+      <DependentUpon>RatingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DateThing.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DateThing.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empolyee\AddAuthor.resx">
+      <DependentUpon>AddAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empolyee\AddBook.resx">
+      <DependentUpon>AddBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empolyee\AddBranch.resx">
+      <DependentUpon>AddBranch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empolyee\AddEmployee.resx">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empolyee\AddPurch.resx">
+      <DependentUpon>AddPurch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empolyee\Auther.resx">
+      <DependentUpon>Auther.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empolyee\Books.resx">
+      <DependentUpon>Books.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empolyee\Branches.resx">
+      <DependentUpon>Branches.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empolyee\EditBook.resx">
+      <DependentUpon>EditBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empolyee\EditBranch.resx">
+      <DependentUpon>EditBranch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empolyee\EditEmployee.resx">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empolyee\EditPurch.resx">
+      <DependentUpon>EditPurch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empolyee\Employees.resx">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empolyee\Empolyee.resx">
+      <DependentUpon>Empolyee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empolyee\MainMenuForm.resx">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empolyee\PurchaseFrm.resx">
+      <DependentUpon>PurchaseFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empolyee\PurchHistoryForm.resx">
+      <DependentUpon>PurchHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CheckTopRatedBooks.resx">
+      <DependentUpon>CheckTopRatedBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empolyee\SearchBooks.resx">
+      <DependentUpon>SearchBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empolyee\ViewAllAuthor.resx">
+      <DependentUpon>ViewAllAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empolyee\ViewAllBranches.resx">
+      <DependentUpon>ViewAllBranches.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empolyee\ViewAllEmp.resx">
+      <DependentUpon>ViewAllEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empolyee\Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empolyee\ViewRequests.resx">
+      <DependentUpon>ViewRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginAndSignUp\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginAndSignUp\SignUpCustomer.resx">
+      <DependentUpon>SignUpCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginAndSignUp\SignupPublisher.resx">
+      <DependentUpon>SignupPublisher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Publisher\PublisherForm.resx">
+      <DependentUpon>PublisherForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Publisher\PublisherFormRequest.resx">
+      <DependentUpon>PublisherFormRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Publisher\PublisherformShowRequests.resx">
+      <DependentUpon>PublisherformShowRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Publisher\Settingsform.resx">
+      <DependentUpon>Settingsform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TotalReports.resx">
+      <DependentUpon>TotalReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TotalSales.resx">
+      <DependentUpon>TotalSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopRatedBooks.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TopRatedBooks.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="BookstoreDataSet.xsc">
+      <DependentUpon>BookstoreDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BookstoreDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BookstoreDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BookstoreDataSet.xss">
+      <DependentUpon>BookstoreDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BookstoreDataSet1.xsc">
+      <DependentUpon>BookstoreDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BookstoreDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BookstoreDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BookstoreDataSet1.xss">
+      <DependentUpon>BookstoreDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BookstoreDataSet2.xsc">
+      <DependentUpon>BookstoreDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="BookstoreDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BookstoreDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BookstoreDataSet2.xss">
+      <DependentUpon>BookstoreDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="BookstoreDataSet3.xsc">
+      <DependentUpon>BookstoreDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="BookstoreDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BookstoreDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BookstoreDataSet3.xss">
+      <DependentUpon>BookstoreDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="BookstoreDataSet4.xsc">
+      <DependentUpon>BookstoreDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="BookstoreDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BookstoreDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BookstoreDataSet4.xss">
+      <DependentUpon>BookstoreDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="BookstoreDataSet5.xsc">
+      <DependentUpon>BookstoreDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="BookstoreDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BookstoreDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BookstoreDataSet5.xss">
+      <DependentUpon>BookstoreDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="BookstoreDataSet6.xsc">
+      <DependentUpon>BookstoreDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="BookstoreDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BookstoreDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BookstoreDataSet6.xss">
+      <DependentUpon>BookstoreDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\TopLeftPersonLogoThing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\114-1147557_education-icon-set-book-icon-png-circle-clipart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\History_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\7f9a0bcf-3a16-4b9b-a78a-44af80991f19.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Settings_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\LogOut_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Book_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Home_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Buy_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Employee_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Envelope_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Exit_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Mainmenu - Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Mainmenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\organization_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\administrator_male_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\report_file_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Search_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\increase_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
