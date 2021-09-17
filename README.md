@@ -28,6 +28,6 @@
 ## Revenue Report 
 ![](Project%20Screenshots/RevenueReport.PNG)
 
-## Total Sales Report.PNG 
+## Total Sales Report 
 ![](Project%20Screenshots/TotalSalesReport.PNG)
 
